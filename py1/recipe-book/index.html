@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FlavorFolio - Your Digital Recipe Book</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1><i class="fas fa-book"></i> FlavorFolio</h1>
+            <p>Your digital recipe collection</p>
+        </div>
+    </header>
+
+    <nav>
+        <div class="container">
+            <div class="nav-controls">
+                <div class="search-container">
+                    <input type="text" id="search-input" placeholder="Search recipes...">
+                    <button id="search-btn"><i class="fas fa-search"></i></button>
+                </div>
+                <div class="filter-container">
+                    <select id="category-filter">
+                        <option value="all">All Categories</option>
+                        <option value="breakfast">Breakfast</option>
+                        <option value="lunch">Lunch</option>
+                        <option value="dinner">Dinner</option>
+                        <option value="dessert">Dessert</option>
+                        <option value="snack">Snack</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container">
+        <div class="recipe-grid" id="recipe-grid">
+            <!-- Recipes will be loaded here by JavaScript -->
+        </div>
+    </main>
+
+    <!-- Recipe Detail Modal -->
+    <div id="recipe-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div id="modal-body">
+                <!-- Recipe details will be loaded here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Add Recipe Form -->
+    <div id="add-recipe-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Add New Recipe</h2>
+            <form id="recipe-form">
+                <div class="form-group">
+                    <label for="recipe-name">Recipe Name</label>
+                    <input type="text" id="recipe-name" required>
+                </div>
+                <div class="form-group">
+                    <label for="recipe-category">Category</label>
+                    <select id="recipe-category" required>
+                        <option value="breakfast">Breakfast</option>
+                        <option value="lunch">Lunch</option>
+                        <option value="dinner">Dinner</option>
+                        <option value="dessert">Dessert</option>
+                        <option value="snack">Snack</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="recipe-image">Image URL</label>
+                    <input type="text" id="recipe-image" placeholder="https://example.com/image.jpg">
+                </div>
+                <div class="form-group">
+                    <label for="recipe-time">Prep Time (minutes)</label>
+                    <input type="number" id="recipe-time" min="1" required>
+                </div>
+                <div class="form-group">
+                    <label for="recipe-ingredients">Ingredients (one per line)</label>
+                    <textarea id="recipe-ingredients" rows="5" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="recipe-instructions">Instructions (one step per line)</label>
+                    <textarea id="recipe-instructions" rows="8" required></textarea>
+                </div>
+                <button type="submit" class="btn-primary">Add Recipe</button>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <button id="add-recipe-btn" class="btn-primary">
+                <i class="fas fa-plus"></i> Add Recipe
+            </button>
+            <p>&copy; 2023 FlavorFolio Recipe Book</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
